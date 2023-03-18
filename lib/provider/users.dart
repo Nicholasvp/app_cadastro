@@ -12,4 +12,8 @@ class Users with ChangeNotifier {
   int get count {
     return _items.length;
   }
+
+  User byIndex(int index) {
+    return _items.values.elementAt(index);
+  }
 }
