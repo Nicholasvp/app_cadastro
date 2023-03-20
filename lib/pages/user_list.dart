@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../components/user_tile.dart';
 import '../provider/users.dart';
+import '../routes/app_routes.dart';
 
 class UserList extends StatelessWidget {
   const UserList({super.key});
@@ -13,7 +14,14 @@ class UserList extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Lista de usuários'),
-        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.add))],
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(AppRoutes.USER_FORM);
+            },
+            icon: const Icon(Icons.add),
+          )
+        ],
       ),
       body: ListView.builder(
         itemCount: users.count,
