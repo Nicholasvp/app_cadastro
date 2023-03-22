@@ -1,4 +1,5 @@
 import 'package:app_cadastro/models/user.dart';
+import 'package:app_cadastro/provider/users.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,11 +19,11 @@ class UserForm extends StatelessWidget {
                 final isValid = _form.currentState!.validate();
                 if (isValid) {
                   _form.currentState!.save();
-                  Provider.of<dynamic>(context, listen: false).put(User(
-                    id: _formData['id']!,
+                  Provider.of<Users>(context, listen: false).put(User(
+                    id: '',
                     name: _formData['name']!,
                     email: _formData['email']!,
-                    avatarUrl: _formData['avatarURL']!,
+                    avatarUrl: '',
                   ));
                   Navigator.of(context).pop();
                 }
@@ -43,7 +44,7 @@ class UserForm extends StatelessWidget {
                 if (value == null || value.trim().isEmpty) {
                   return 'Preencha esse campo';
                 }
-                ;
+                return null;
               },
               onSaved: (value) => _formData['name'] = value!,
             ),
