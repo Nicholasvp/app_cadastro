@@ -1,16 +1,12 @@
 # app_cadastro
+Este projeto em Flutter, consiste em um app de cadastro, onde o usuário pode inserir, alterar e excluir pessoas em um lista.
 
-A new Flutter project.
+<img src='https://i.imgur.com/ilXoSir.gif' href='app-cadastro'>
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Tecnologias
+Aqui está algumas ferramentas que aprendi no processo de criação do app.
+- Provider
+- ChangeNotifier
+- Routes
+- Navigator
+- AlertDialog
