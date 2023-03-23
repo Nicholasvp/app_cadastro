@@ -20,13 +20,7 @@ class Users with ChangeNotifier {
   }
 
   void put(User user) {
-    if (user == null) {
-      return;
-    }
-
-    if (user.id != null &&
-        user.id.trim().isNotEmpty &&
-        _items.containsKey(user.id)) {
+    if (user.id.trim().isNotEmpty && _items.containsKey(user.id)) {
       _items.update(
           user.id,
           (_) => User(
@@ -37,7 +31,7 @@ class Users with ChangeNotifier {
     } else {
       final id = Random().nextDouble().toString();
       _items.putIfAbsent(
-        '10',
+        id,
         () => User(
           id: id,
           name: user.name,
@@ -51,9 +45,7 @@ class Users with ChangeNotifier {
   }
 
   void remove(User user) {
-    if (user != null && user.id != null) {
-      _items.remove(user.id);
-      notifyListeners();
-    }
+    _items.remove(user.id);
+    notifyListeners();
   }
 }
